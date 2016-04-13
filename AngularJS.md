@@ -115,3 +115,57 @@ Puis, on peut écrire notre test :
 # Conclusion :
 N’utilisez pas jQuery. Ne l’importez même pas. Ça vous ralentirait. Et quand vous rencontrez un problème que vous pensez pouvoir régler avec jQuery, avant d’utiliser $, essayez plutôt de trouver une solution en Angular. Et si vous ne trouvez pas, demandez ! 19 fois sur 20, la meilleure manière de faire n’a pas besoin de jQuery.
 Maintenant vous savez un peu plus de chose.
+___
+#### Lexique:
+
+###ng-app
+La directive ng-app permet de dire à AngularJs qu’il doit être actif sur cette section de la page. Dans notre cas, il s’agit de toute la page puisqu’elle est située sur la balise <html>, mais on pourrait très bien la mettre sur un <div> par exemple.
+
+###ng-controller
+Cette section de la page est gérée par le contrôleur MainCtrl (notez la majuscule). Les variables et fonctions déclarées dans le scope de ce contrôleur sont accessibles dans cette zone du html, et pas en dehors.
+
+###{{}}
+Tout ce qui est entre doubles accolades sera interprété. Les variables et fonctions du contrôleur sont utilisables ici. Si les données changent dans le contrôleur, les changements seront répercutés sur la vue. C’est du one-way data binding. Dans l’exemple ci-dessus, {{title}} affiche simplement le contenu de $scope.title.
+
+###ng-model
+C’est une des « killer features » d’AngularJs, c’est ce que l’on appelle du two-way data binding. Si les données sont mises à jour dans le contrôleur, les changements seront répercutés dans la vue, et si les données sont mises à jour dans la vue, les changements seront répercutés dans le contrôleur! Dans l’exemple ci-dessus, l’utilisateur tape du texte dans l’input, ce qui met à jour la variable $scope.name du contrôleur, et le changement est instantanement répércuté côté vue dans {{name}}.
+
+###$scope
+Le scope est ce qui fait le lien entre le contrôleur et la vue. Techniquement c’est un objet javascript, et les propriétés qu’on lui ajoute (variables et fonctions) sont accessibles dans la vue, elles sont en quelque sorte publiques. Mais il est également possible de créer des variables et des fonctions privées (pas accessibles dans la vue).
+
+	//Public (accessible dans le contrôleur et dans la vue)
+	$scope.maVariable = "Hey";
+	$scope.maFonction = function () {
+    return 1;
+	};
+ 
+	//Privé (accessible seulement dans le contrôleur)
+	var maVariable2 = "Hey";
+	var maFonction2 = function () { //Une première manière de déclarer une fonction
+    return 2;
+	};
+	function maFonction3() { //Une deuxième manière de déclarer une fonction
+    return 3;
+	};
+	
+##FAQ
+####« Ça marche pas »
+Pensez bien à mettre ng-app au début de votre application. L’oubli de cette directive (nous reviendrons sur ce terme) est la plus grande source d’erreur lorsque l’on débute.
+
+####Ai-je besoin d’un serveur pour utiliser AngularJs?
+Pour faire une application simple, vous n’avez pas besoin de serveur. Vous en aurez besoin si vous souhaitez que votre application comporte plusieurs pages.
+
+####Est-ce que je peux utiliser jQuery avec AngularJs?
+Si vous débutez sur AngularJs, il est vivement conseillé de ne pas utiliser jQuery le temps de vous familiariser avec l’esprit Angular.
+
+#(pour info)
+AngularJs embarque une version allégée de jQuery appelée jQlite, avec laquelle vous pouvez utiliser quelques unes des fonctions les plus courantes de jQuery telles que addClass(), find(), val()… Pour ce faire, remplacer le $ (ou jQuery) par angular.element
+
+	//Avec jQuery
+	$( "select.foo" ).val();
+	//Avec AngularJs (Attention, ce n'est qu'un exemple!)
+	//Ce n'est pas la bonne manière d'utiliser un select en angular
+	angular.element("select.foo").val();
+
+Si malgré tout, vous souhaitez utiliser jQuery, vous le pouvez, et sachez que toutes les méthodes seront accessibles via angular.element
+	
