@@ -133,3 +133,13 @@ Il faut :
 
 > Une approche très propre, orientée métier...
 Impressionnant non ?
+
+### et maintenant !
+AngularJS est un framework côté client atypique, permettant de construire des applications client riche avec une véritable séparation entre les couches (métier/interface/contrôle).
+
+Il introduit de nouveaux concepts (directives, services, modules…) avec lesquels il faut se familiariser dans un premier temps.
+
+Pour vous permettre une prise en main plus rapide du Framework, nous avons choisi d'utiliser le cours réalisé par Code school mis à disposition du public.
+
+* Créer un compte gratuit sur : [Code school](https://www.codeschool.com/users/sign_up)
+* Suivre en ligne le cours : [Shaping up with Angular.js](https://www.codeschool.com/courses/shaping-up-with-angular-js)
