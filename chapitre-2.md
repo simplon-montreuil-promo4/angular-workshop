@@ -56,6 +56,7 @@ Il nous faut :
 * une fonction pour ajouter un listener sur un événement d'un élément DOM : `addEvent`
 * une fonction pour synchroniser la zone de texte et l'élément HTML : `changeFunction`
 Ajouter l'écoute des événements `keyup` et `paste` qui impliquent une modification de la zone de texte, et ajouter un temps d'attente sur le paste, pour qu'il se soit terminé avant l'appel de changeFunction
+
 > Certaines de ces fonctions pourraient être réutilisées ailleurs (et donc délocalisées), mais l'ensemble est tout de même laborieux, et technique.
 
 
@@ -102,6 +103,7 @@ Il faut :
 * Agir lorsque le dom de la page est chargé : `$( document ).ready`
 * Créer un événement postpast, pour agir après que le “coller” d'un texte se soit produit (c'est ce qu'on appelle un trick : bricolage ou astuce…)
 * Associer du code aux événements `keyup` et `postpaste, pour synchroniser le contenu de la zone de texte et de l'élément HTML
+
 > Le code est propre, mais la technicité masque l'approche métier : difficile d'identifier au premier coup d’œil le rôle de ces lignes
 
 
@@ -128,5 +130,6 @@ Il faut :
 * Définir la portée de notre application : `<html data-ng-app>`
 * Déclarer que la zone de texte est synchronisée sur le model message : `data-ng-model=“message”`
 * Invoquer message avec une expression dans l'élément HTML : `{{message}}`
+
 > Une approche très propre, orientée métier...
 Impressionnant non ?
