@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-	margin:20px 30px;
+	margin:20px 53px;
 }
 .row {
 	display: flex;
@@ -29,6 +29,9 @@
 .first {
 	background-color: #D9EDF7;
 	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 }
 
 .first p {
@@ -38,6 +41,12 @@
 .last {
 	background-color: #61A1BC;
 }
-
-#8EC06C
-#777777
+button p {
+	display: flex;
+	justify-content: space-between;
+}
+button {
+	width: 200px;
+}
+/*#8EC06C
+#777777*/

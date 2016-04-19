@@ -17,7 +17,7 @@
  	<h1>Services</h1>
  	<div class="row first">
  	<p>Choississez les elements a inclure</p>
- <!-- 	<p>2 services selectionnés</p> -->
+ 	<p>{{total(0)}} service(s) selectionne(s)</p>
  	</div>
  <!-- 	le premier mot fait reference aux noms d'objet dans app.js ici nine -->
  	<button ng-repeat="nine in services" ng-click="toggleActive(nine)" class="row btn {{nine.active ? 'btn-success' : 'btn-danger'}}">
@@ -27,8 +27,8 @@
  	</button>
  	 	<hr>
  	 	<div class="row last">
- 	 		<p>{{total}}</p>
- 	<!--  		<p>{{price}}</p> -->
+ 	 		<p>prix</p>
+ 
  	 	</div>
  	</div>
  </div>
