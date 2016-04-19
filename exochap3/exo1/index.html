@@ -4,14 +4,21 @@
 	<title>Workshop Angular</title>
 	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
 	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-	<link rel="css/styles.css" type="text/css" href="">
+	 <link type="text/css" rel="stylesheet" href="css/styles.css">
 	<script src="app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="MainCtrl">
- 	<input type "text" ng-model ='note'/>
- 	<p>{{note}}</p>
- 	  <div>
- 	  <p>Caracteres restants{{maxLength - note.length}} </p>
+<div class="container">
+ 	<textarea class = "champ-note" type "text" ng-model ='note'></textarea>
+ 	<div class="options">
+ 	<button ng-click="sauvegarder()">Enregistrer</button>
+ 	<button ng-click = "effacer()">Effacer</button>
+ 	</div>
+ 	<p>Caracteres restants {{maxLength - note.length}} </p>
+ 	<p>{{save}}</p>
+ 		<!-- ici on apelle notre scope -->
 </div>
-</body>
+
+ 	  
+ 	  </body>
 </html>

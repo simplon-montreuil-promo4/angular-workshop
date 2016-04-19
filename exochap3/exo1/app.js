@@ -9,4 +9,15 @@ if($scope.note.length > $scope.maxLength) {
 }
 
 });
+//ng-click s'utilise avec une fonction, en
+//dehors de watch ici 
+//dans le html on apelle la fonction donc avec les()
+$scope.sauvegarder = function (){
+	$scope.save = "BRAVO c'est sauvegardeeeeeeeee !";
+};
+
+$scope.effacer = function() {
+	$scope.note = "";
+}
+
 }]);
