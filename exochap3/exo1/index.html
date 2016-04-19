@@ -9,13 +9,14 @@
 </head>
 <body ng-controller="MainCtrl">
 <div class="container">
- 	<textarea class = "champ-note" type "text" ng-model ='note'></textarea>
+	<p>Note :</p>
+ 	<textarea class = "champ-note" type "text" ng-model ='note' ng-class="rouge"></textarea>
  	<div class="options">
- 	<button ng-click="sauvegarder()">Enregistrer</button>
+ 	<button ng-click="sauvegarder()" class="boutons">Enregistrer</button>
  	<button ng-click = "effacer()">Effacer</button>
  	</div>
- 	<p>Caracteres restants {{maxLength - note.length}} </p>
- 	<p>{{save}}</p>
+ 	<p class="message1">Caracteres restants {{maxLength - note.length}}</p>
+ 	<p ng-class="message2">{{save}}</p>
  		<!-- ici on apelle notre scope -->
 </div>
 

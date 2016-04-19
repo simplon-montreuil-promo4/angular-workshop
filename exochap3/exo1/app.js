@@ -6,6 +6,7 @@ $scope.$watch('note', function(newValue, oldValue) {
 //$scope.note.length = newValue.length; //à parti du moment ou on a un chagement dansa l'input lenght = newvalue/length
 if($scope.note.length > $scope.maxLength) {
 	$scope.note = oldValue;
+	$scope.rouge= "bgRed";
 }
 
 });
@@ -13,7 +14,8 @@ if($scope.note.length > $scope.maxLength) {
 //dehors de watch ici 
 //dans le html on apelle la fonction donc avec les()
 $scope.sauvegarder = function (){
-	$scope.save = "BRAVO c'est sauvegardeeeeeeeee !";
+	$scope.save = "Votre note a ete sauvergardee";
+	$scope.message2 = "bgGreen";
 };
 
 $scope.effacer = function() {

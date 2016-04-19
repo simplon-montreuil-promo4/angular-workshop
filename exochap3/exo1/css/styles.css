@@ -2,11 +2,10 @@
 margin: 0;
 }
 
-
 .champ-note {
 	width: 300px;
 	height: 150px;
-	border: 1px solid blue;
+	border: 1px solid #337AB7;
 	border-radius: 2px;
 	font-size: 12px;
 	text-align: left;
@@ -25,9 +24,33 @@ margin: 0;
 }
 
 .options button {
-	background-color: #66CCFF;
+	background-color: #337AB7;
 	border: 1px solid #6699FF;
 	border-radius: 2px;
 	margin-left: 10px;
+	color:white;
+}
+.message1 {
+	background-color: #D9EDF7;
+	width: 300px;
+	height: 30px;
+	padding-left: 20px;
+}
+
+.bgGreen {
+	background-color: #DFF0D8;
+	width: 300px;
+	height: 30px;
+	padding-left: 20px;
+}
+
+ .message2 p {
+ 	padding-left: 20px;
+}
+.options {
+	padding-top: 20px;
+}
+.bgRed {
+	background-color: red;
 }
 
