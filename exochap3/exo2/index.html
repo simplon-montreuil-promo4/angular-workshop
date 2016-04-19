@@ -16,18 +16,19 @@
  	<div class="wrapper">
  	<h1>Services</h1>
  	<div class="row first">
- 	<p>Choississez les elements à inclure</p>
+ 	<p>Choississez les elements a inclure</p>
  <!-- 	<p>2 services selectionnés</p> -->
  	</div>
  <!-- 	le premier mot fait reference aux noms d'objet dans app.js ici nine -->
- 	<div ng-repeat="nine in services" ng-click="services" class="row">
+ 	<button ng-repeat="nine in services" ng-click="toggleActive(nine)" class="row btn {{nine.active ? 'btn-success' : 'btn-danger'}}">
+ 	<!-- est ce que c'est vrai ? si oui fait la premiere action sinon ne la fait pas. Danger et succes : vert et rouge bootstrap -->
  		<p>{{nine.name}}</p>
  		<p>{{nine.price | currency}}</p>
- 	</div>
+ 	</button>
  	 	<hr>
  	 	<div class="row last">
- 	 		<p>Total:</p>
- 	 		<p>{{price}}</p>
+ 	 		<p>{{total}}</p>
+ 	<!--  		<p>{{price}}</p> -->
  	 	</div>
  	</div>
  </div>

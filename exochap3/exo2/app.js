@@ -19,5 +19,8 @@ app.controller('MainCtrl', ['$scope', function($scope) {
     active:false
 }
 ];
-
+ 
+ $scope.toggleActive = function (service) {
+    service.active = !service.active; //false ou tue
+ } 
 }])
