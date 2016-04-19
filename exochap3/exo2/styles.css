@@ -1,0 +1,44 @@
+.container {
+	background-color: #61A1BC;
+	width: 300px;
+	font-family: sans-serif;
+}
+
+.container h1 {
+	text-align: center;
+	color: white;
+}
+
+.wrapper {
+	margin:20px 30px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	padding: 10px 0;
+	background-color: grey;
+	border-radius: 3px;
+}
+
+.row p {
+	color: white;
+	font-size: 14px;
+
+
+}
+.first {
+	background-color: #D9EDF7;
+	margin-bottom: 30px;
+}
+
+.first p {
+	color: #61A1BC;
+}
+
+.last {
+	background-color: #61A1BC;
+}
+
+#8EC06C
+#777777

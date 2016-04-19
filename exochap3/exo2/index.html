@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="interface"> 
+<!-- Sur cette page on va utiliser angular -->
+<head>
+	<title>Exercice 2</title>
+	<meta charset-"utf-8">
+	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	 <link type="text/css" rel="stylesheet" href="styles.css">
+	<script src="app.js" type="text/javascript"></script>
+</head>
+<body ng-controller ="MainCtrl">
+<!-- sur cette partie on va utiliser des controleurs angular
+ -->
+ <div class="container">
+ 	<div class="wrapper">
+ 	<h1>Services</h1>
+ 	<div class="row first">
+ 	<p>Choississez les elements à inclure</p>
+ <!-- 	<p>2 services selectionnés</p> -->
+ 	</div>
+ <!-- 	le premier mot fait reference aux noms d'objet dans app.js ici nine -->
+ 	<div ng-repeat="nine in services" ng-click="services" class="row">
+ 		<p>{{nine.name}}</p>
+ 		<p>{{nine.price | currency}}</p>
+ 	</div>
+ 	 	<hr>
+ 	 	<div class="row last">
+ 	 		<p>Total:</p>
+ 	 		<p>{{price}}</p>
+ 	 	</div>
+ 	</div>
+ </div>
+</body>
+</html>
