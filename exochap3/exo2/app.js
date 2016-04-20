@@ -19,19 +19,23 @@ app.controller('MainCtrl', ['$scope', function($scope) {
     active:false
 }
 ];
+$scope.bigTotal = 300;
 $scope.totalService = 1; //par default un car 1 d'activé par default
 $scope.total = function (nouveauService){ //pour recupere 1 ou -1 c'est un parametre
     return $scope.totalService += nouveauService;
+   
 }
  
- $scope.toggleActive = function (service) {
+ $scope.toggleActive = function (service) { //ici service correspond à service cliqué
     service.active = !service.active; //false ou tue
     if (service.active === true) {
         $scope.total(1);
+        $scope.bigTotal += service.price; //service cliqué avec son prix
     }
     else{
         $scope.total(-1);
-    }
+         $scope.bigTotal -= service.price;
+    };
  };
 
 }])
@@ -39,3 +43,4 @@ $scope.total = function (nouveauService){ //pour recupere 1 ou -1 c'est un param
 //on le recupere dans la fonction toggle active
 //on peut acceder à l'objet savoir si c'est
 //true ou false
+//l'objet cliqué devient service
