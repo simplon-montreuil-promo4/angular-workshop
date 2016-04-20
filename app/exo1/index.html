@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="NoteApp">
+  <head>
+    <meta charset="utf-8">
+    <title>ANGULARJS - chapitre 3 - exercice 1, Application note</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="normalize.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+
+  <body ng-controller="MainCtrl">
+    <div class="container">
+
+    <div class="row">
+      <div class="appHead">
+        <h4>Exo 1 : Note Application</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="appText">
+        <label for="Note">Note :</label>
+        <textarea name="limitedTextArea" rows="8" maxlength="100" id="Note" ng-model="messageNote"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="appButtons">
+        <input type="button" value="Enregistrer" ng-click="afficheSauve()" class="saveNote btn"></input>
+        <input type="button" value="Effacer" ng-click="effaceNote()" class="removeNote btn"></input>
+      </div>
+
+      <div class="textCount alert alert-info">
+        <p class="countDown" ng-model="count">
+        Nombre de caractères restants: {{count}}
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="zoneInfo">
+        <infomodif></infomodif>
+        <infosauve></infosauve>
+        <infodanger></infodanger>
+      </div>
+    </div>
+
+    </div>
+  </body>
+
+</html>
