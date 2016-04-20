@@ -1,0 +1,40 @@
+#container {
+	background-color: #61A1BC;
+	width: 350px;
+	height: 500px;
+	text-align: center;
+	border-radius: 5px;
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: center;
+	align-content: center;
+	color: white;
+}
+
+.sizeContServ {
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	background: #777777;
+	margin: 10px;
+}
+
+#styleContServ {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.contServ {
+	width: 100%;
+	height: 50px;
+	border-radius: 5px;
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.active {
+	background: #8DC06C;
+}

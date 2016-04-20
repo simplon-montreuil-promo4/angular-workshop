@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<title>Services</title>
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body ng-app='myapp'>
+	<div id="container" ng-controller="myCtrl">
+		{{$scope.prenom}}
+		<h1>Services</h1>
+		<div class="contServ" style="background: #D8ECF6;color:black;">Choisissez les éléments à inclure <br> {{nbrSelection}} services sélectionnés</div>
+
+		<div class="sizeContServ" ng-repeat="service in services" ng-click="selection($index, service)">
+		  <div id="styleContServ" ng-class="{'active': service.active}">
+			<div class="contServ">{{service.name}}</div>
+			<div class="contServ">{{service.price | currency:'€'}}</div>
+		  </div>
+		</div>
+
+		<div class="contServ" style="border-top: solid 1px white;">
+			<div class="contServ">Total :</div>
+			<div class="contServ">{{somme | currency:'€'}}</div>
+		</div>
+	</div>
+	<script src="js/app.js"></script>
+	<script src="js/controlScop.js"></script>
+</body>
+</html>
