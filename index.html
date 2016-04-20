@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="exo">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+</head>
+
+<body>
+    <!-- link container with `AppCtrl` -->
+    <div class="container" ng-controller="AppCtrl as controller">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8">
+                <!-- link textarea with `countmodel` -->
+                <textarea class="form-control" rows="6" ng-model="countmodel" ng-trim="false" maxlength="10"></textarea>
+                <!-- bind h3 display with `countmodel.length` -->
+                <h3 class="orange" ng-class="{green: countmodel.length <= 4, red: countmodel.length == 10}">{{10 - countmodel.length}} left</h3>
+                <!-- bind button click with `controller's clearSearch` -->
+                <!-- bind countmodel.length == 0 to button enabled status -->
+                <button type="button" class="btn btn-danger" ng-click="controller.clearSearch()" ng-disabled="countmodel.length <= 0">Delete</button>
+                <!-- bind button click with controller's saveText -->
+                <!-- disable button according to countmodel.length and textIsSaved model -->
+                <button type="button" class="btn btn-success" ng-click="controller.saveText()" ng-disabled="countmodel.length <= 0 || textIsSaved == true">Save</button>
+                <!-- display p when `textIsSaved model` is true -->
+                <div ng-show="textIsSaved">Text is saved</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
