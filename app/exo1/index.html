@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="fr" ng-app="noteApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Your title</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/noteApp.js"></script>
+    <script src="js/controllers/noteController.js"></script>
+
+  </head>
+  <main>
+    <section class="container" ng-controller="noteController as note">
+      <h1 class="bg-primary">Ex 1: Note application</h1>
+      <h2>Note:</h2>
+      <textarea class="form-control" maxlength="100" ng-model="note.messageNote" ng-change="note.count()"></textarea>
+      <button class="btn btn-success" ng-click="note.save()" >Enregistrer</button>
+      <button class="btn btn-danger" ng-click="note.clear()">Effacer</button>
+      <p>Nombre de caractères restant: {{note.charactersLeft}}</p>
+      <p class="h1 {{note.saveStatus}}" ng-show="note.triedSaving === true">{{note.statusMessage}}</p>
+    </section>
+  </main>
+  <body>
+  </body>
+</html>
