@@ -120,5 +120,71 @@ Filtre : currency
 	* La classe css d'un service sélectionné est égale à `active`
 	* La sélection/dé-sélection met à jour l'affichage du nombre de services sélectionnés, ainsi que le `total`
  
+##Exo4 = Calculatrice le retour !
+* Objectifs:
+	* Créer un service (moteur de la calculatrice)
+	* Utiliser un service (Injection de dépendance)
+	* Créer des directives  (hiihihihihihi)
+* Focntionnalités:
+	* faire des calculs simples
+	* Mériser un résultat
+	* Eteindre /allumer calculatrice
+	
+	
+* Vue:
+
+![calculatrice](./img/calculatrice.png)
+
+* Consigne de réalisation:
+
+Directives:
+
+ * Créer une directive permettant de créer un bouton de calculatrice (placer ensuite les valeurs possibles prises par les boutons dans un tableau, initialisé dans le code :
+ 
+ 		exemple de tableau utilisé
+ 		this.ops=[
+            {value:'('},
+            {value:')'},
+            {value:'M'},
+            {value:' '},
+            {value:'RM'},
+            {value:'Off',cssClass:"btn-danger",title:"Eteindre la calculatrice"},
+            {value:'\n'},
+            {value:"⇤"},
+            {value:"CE"},
+            {value:"C"},
+            {value:" "},
+            {value:"±"},
+            {value:"√x"},
+            {value:"\n"},
+            {value:7},
+            {value:8},
+            {value:9},
+            {value:' '},
+            {value:'/'},
+            {value:'%'},
+            {value:'\n'},
+            {value:4},
+            {value:5},
+            {value:6},
+            {value:' '},
+            {value:'*'},
+            {value:'1/x'},
+            {value:'\n'},
+            {value:1},
+            {value:2},
+            {value:3},
+            {value:' '},
+            {value:'-'},
+            {value:'\n'},
+            {value:0,cssClass:"colspan btn-default"},
+            {value:'.',cssClass:"btn-default"},
+            {value:' '},
+            {value:'+'},
+            {value:'=',cssClass:"rowspan btn-success",title:"Calculer ([ENTREE]) !"}
+            ];
+
+ * créer la partie calcul dans un service ,et injecter ce service dans le contrôleur.
+ 
 ####voilà pour vous!
 
