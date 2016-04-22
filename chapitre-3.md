@@ -128,14 +128,16 @@ ___
 * Créer un module et un contrôleur
 * Utiliser des directives Angular
 * Mettre en oeuvre le Data-binding
-### Fonctionnalités
-	* Lister les produits disponibles
-	* Ajouter un ou plusieurs produits disponibles aux produits sélectionnés
-	* Ajouter tous les produits disponibles aux produits sélectionnés
-	* Retirer un ou plusieurs produits sélectionnés
-	* Retirer tous les produits sélectionnés
-	* Valider le choix de produits sélectionnés
-	* Revenir au choix des produits
+
+### Fonctionnalités:
+
+* Lister les produits disponibles
+* Ajouter un ou plusieurs produits disponibles aux produits sélectionnés
+* Ajouter tous les produits disponibles aux produits sélectionnés
+* Retirer un ou plusieurs produits sélectionnés
+* Retirer tous les produits sélectionnés
+* Valider le choix de produits sélectionnés
+* Revenir au choix des produits
 
 ### Application/Contrôleurs
 
