@@ -120,12 +120,123 @@ Filtre : currency
 	* La classe css d'un service sélectionné est égale à `active`
 	* La sélection/dé-sélection met à jour l'affichage du nombre de services sélectionnés, ainsi que le `total`
  
+ 
+___
+##Exo3 = choix multiples
+
+### Objectifs:
+* Créer un module et un contrôleur
+* Utiliser des directives Angular
+* Mettre en oeuvre le Data-binding
+### Fonctionnalités
+	* Lister les produits disponibles
+	* Ajouter un ou plusieurs produits disponibles aux produits sélectionnés
+	* Ajouter tous les produits disponibles aux produits sélectionnés
+	* Retirer un ou plusieurs produits sélectionnés
+	* Retirer tous les produits sélectionnés
+	* Valider le choix de produits sélectionnés
+	* Revenir au choix des produits
+
+### Application/Contrôleurs
+
+Application |  Contrôlleur|
+------------| ------------- | 
+`ListesApp` (app/listesApp.js)| `ListesController` (app/listesController.js)  | 
+| `dispoItems` : Tableau des produitsdéfini en JSON (utiliser le service $http)| 
+|`includesItems`: Tableau des produits à inclure|
+|`selectedDispoItems`:Tableau des éléments sélectionnés |
+|`selectedIncludedItems`: Tableau des éléments dans la liste des produits à inclure|
+|`step` : Variable d'état agissant sur les vues et prenant les valeurs 1: choix des produits ou 2 : visualisation du choix |
+|`addToIncluded()`: ajoute tous les produits en surbrillance (`selectedDipoItems`) à la liste des produits à inclure (`includedItems`)|
+|`addAllToIncluded()`: ajoute tous les produits disponibles(`dispoItems`) à la liste produits à inclure(`includedItems`) |
+|`removeFromIncluded()`: Retire tous les produits sélectionnés en surbrillance (`selectedDipoItems`) à la liste des produits à inclure (`items`)|
+|`removeAllFromIncluded()`: retire tout les produits à inclure (`includedItems`) pour les remettre dans la liste des produits disponibles(`items`)|
+
+`dispoItems` à intégrer dans un contrôleur :
+
+		[
+        {
+            "url": "http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/",
+            "title": "50 Must-have plugins for extending Twitter Bootstrap",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/07/featured_4-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/08/simple-registration-system-php-mysql/",
+            "title": "Making a Super Simple Registration System With PHP and MySQL",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/08/simple_registration_system-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/08/slideout-footer-css/",
+            "title": "Create a slide-out footer with this neat z-index trick",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/08/slide-out-footer-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/06/digital-clock/",
+            "title": "How to Make a Digital Clock with jQuery and CSS3",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/06/digital_clock-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/05/diagonal-fade-gallery/",
+            "title": "Smooth Diagonal Fade Gallery with CSS3 Transitions",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/05/featured-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/05/mini-ajax-file-upload-form/",
+            "title": "Mini AJAX File Upload Form",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/05/ajax-file-upload-form-100x100.jpg"
+        },
+        {
+            "url": "http://tutorialzine.com/2013/04/services-chooser-backbone-js/",
+            "title": "Your First Backbone.js App – Service Chooser",
+            "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/04/service_chooser_form-100x100.jpg"
+        }
+    ]
+
+###VUE:
+* Directives utilisées:
+	* ng-app
+	* ng-controller
+	* ng-repeat
+	* ng-options
+	* ng-pluralize
+	* ng-click
+	* ng-dblclick
+	* ng-src
+	* Expressions {{expression}}
+	
+### Interface :
+#### Etape 1:
+
+![step1](./img/interfaceCM1.png)
+
+#### Etape 2:
+
+![step2](./img/interfaceCM2.png)
+
+### Logique applicative / comportement de l'interface :
+
+* Les 4 boutons d'ajout ou de retrait des services à inclure s'activent ou se désactive (disabled) en fonction du contenu des listes et/ou des éléments sélectionnés
+	* bouton ▶| : ajoute le(s) élément(s) sélectionnés de la liste de gauche à la liste de droite
+	* bouton ▶▶| : ajoute tous les éléments sélectionnés de la liste de gauche à la liste de droite
+	* bouton |◀ : retire le(s) élément(s) sélectionnés de la liste de droite et les place dans la liste de gauche
+	* bouton |◀◀ : retire tous les éléments sélectionnés de la liste de droite et les place dans la liste de gauche
+* Un double clic sur l'un des éléments des 2 listes ajoute ou retire l'élément et le passe dans la liste associée
+* Le nombre de produits inclus se met à jour en fonction du nombre d'éléments dans la liste de droite
+* Le passage à l'étape suivante n'est possible que si la liste de droite n'est pas vide
+	* le bouton “Passer à l'étape suivante” affiche la vue suivante (en passant step à 2)
+	* la vue affiche la liste des éléments ajoutés dans les éléments à inclure
+
+
+
+___
 ##Exo4 = Calculatrice le retour !
-* Objectifs:
-	* Créer un service (moteur de la calculatrice)
-	* Utiliser un service (Injection de dépendance)
-	* Créer des directives  (hiihihihihihi)
-* Focntionnalités:
+
+###Objectifs:
+
+* Créer un service (moteur de la calculatrice)
+* Utiliser un service (Injection de dépendance)
+* Créer des directives  (hiihihihihihi)
+###Focntionnalités:
 	* faire des calculs simples
 	* Mériser un résultat
 	* Eteindre /allumer calculatrice
