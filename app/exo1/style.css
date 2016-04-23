@@ -1,0 +1,33 @@
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+
+
+.appHead {
+  background-color: #00b300;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+
+
+/*appText*/
+
+  .appText textarea {
+    width: 100%;
+    margin: auto;
+  }
+
+  .appText label {
+    display: block;
+  }
+
+
+
+.appButtons {
+  margin: 5px 0 10px 0;
+}
