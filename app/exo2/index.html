@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="fr" ng-app="servicesApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Your title</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="master.css">
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/servicesApp.js"></script>
+    <script src="js/controllers/ServicesController.js"></script>
+
+  </head>
+  <main>
+    <section class="container" ng-controller="ServicesController as store">
+      <h1>Services</h1>
+      <div class="row first">
+	<p>Choississez les éléments à inclure</p>
+	<p>{{store.totalServices}} services sélectionnés</p>
+      </div>
+      <button type="submit" class="btn row {{service.active === true ? 'btn-success' : 'btn-danger'}}" ng-click="store.toggleActive(service)" ng-repeat="service in store.services">
+	<p>{{service.name}}</p>
+	<p>{{service.price | currency:'€'}}</p>
+	</button>
+      </div>
+      <hr>
+      <div class="row last">
+	<p>Total: {{store.totalPrice | currency:'€'}}</p>
+	</div>
+    </section>
+  </main>
+  <body>
+  </body>
+</html>
