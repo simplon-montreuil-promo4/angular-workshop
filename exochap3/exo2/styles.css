@@ -1,0 +1,52 @@
+.container {
+	background-color: #61A1BC;
+	width: 300px;
+	font-family: sans-serif;
+}
+
+.container h1 {
+	text-align: center;
+	color: white;
+}
+
+.wrapper {
+	margin:20px 53px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	padding: 10px 0;
+	border-radius: 3px;
+}
+
+.row p {
+	color: white;
+	font-size: 14px;
+
+
+}
+.first {
+	background-color: #D9EDF7;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.first p {
+	color: #61A1BC;
+}
+
+.last {
+	background-color: #61A1BC;
+}
+button p {
+	display: flex;
+	justify-content: space-between;
+}
+button {
+	width: 200px;
+}
+/*#8EC06C
+#777777*/

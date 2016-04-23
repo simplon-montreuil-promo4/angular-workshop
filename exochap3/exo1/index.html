@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app = "interfaceMessage">
+<head>
+	<title>Workshop Angular</title>
+	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	 <link type="text/css" rel="stylesheet" href="css/styles.css">
+	<script src="app.js" type="text/javascript"></script>
+</head>
+<body ng-controller="MainCtrl">
+<div class="container">
+	<p>Note :</p>
+ 	<textarea class = "champ-note" type "text" ng-model ='note' ng-class="rouge"></textarea>
+ 	<div class="options">
+ 	<button ng-click="sauvegarder()" class="boutons">Enregistrer</button>
+ 	<button ng-click = "effacer()">Effacer</button>
+ 	</div>
+ 	<p class="message1">Caracteres restants {{maxLength - note.length}}</p>
+ 	<p ng-class="message2">{{save}}</p>
+ 		<!-- ici on apelle notre scope -->
+</div>
+
+ 	  
+ 	  </body>
+</html>
