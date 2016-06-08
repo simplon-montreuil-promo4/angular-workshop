@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/app2.js"></script>
+    <script src="js/controllers/servicesController.js"></script>
+  </head>
+  <body>
+    <form data-ng-app="ServicesApp" ng-controller="ServicesController as sCtrl" class="img-rounded">
+
+    	<h1>Services</h1>
+    	<div class="alert alert-info">
+    		<span>Choisissez les éléments à inclure</span>
+    		<p>
+    			<ng-pluralize count="sCtrl.count" when="{0:'Aucun service sélectionné',
+    											1:'1 service sélectionné',
+    											'other':'{} services sélectionnés'}"></ng-pluralize>
+    		</p>
+    	</div>
+    	<ul>
+    		<li ng-repeat="service in sCtrl.services" ng-click="sCtrl.toggleActive(service)" ng-class="{active:service.active}">
+    			{{service.name}} <span>{{service.price | currency}}</span>
+    		</li>
+    	</ul>
+
+    	<div class="total">
+    		<!-- Format en currency. -->
+    		Total: <span>{{sCtrl.total() | currency}}</span>
+    	</div>
+    	<div>
+    		
+    </form>
+  </body>
+</html>

@@ -1,2 +1,2 @@
 
-var countersApp = angular.module('countersApp',[]);
+var NoteApp = angular.module('NoteApp',[]);
